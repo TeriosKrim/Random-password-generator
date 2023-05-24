@@ -1,19 +1,19 @@
 import random
-from unicodedata import digit
+import string
 
 def shuffle(string):
     tempList = list(string)
     random.shuffle(tempList)
-    return ' '.join(tempList)
+    return ''.join(tempList)
 
-uppercaseLetter1=chr(random.randint(65,90))
-uppercaseLetter2=chr(random.randint(65,90))
-lowercaseLetter1=chr(random.randint(97,122))
-lowercaseLetter2=chr(random.randint(97,122))
-digit1=chr(random.randint(48,57))
-digit2=chr(random.randint(48,57))
-punctuationsign1=chr(random.randint(32,152))
-punctuationsign2=chr(random.randint(32,152))
+uppercaseLetter1 = random.choice(string.ascii_uppercase)
+uppercaseLetter2 = random.choice(string.ascii_uppercase)
+lowercaseLetter1 = random.choice(string.ascii_lowercase)
+lowercaseLetter2 = random.choice(string.ascii_lowercase)
+digit1 = random.choice(string.digits)
+digit2 = random.choice(string.digits)
+punctuationsign1 = random.choice(string.punctuation)
+punctuationsign2 = random.choice(string.punctuation)
 
 password = uppercaseLetter1 + uppercaseLetter2 + lowercaseLetter1 + lowercaseLetter2 + digit1 + digit2 + punctuationsign1 + punctuationsign2
 password = shuffle(password)
